@@ -1,33 +1,40 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-
-#include <stdlib.h>
+#define INT_DEC_SIZE (sizeof(int) * (CHAR_BIT / 3 + 3))
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
+#include <stdint.h>
+/**
+ * struct print_methods - struct for all print identifiers
+ *
+ * @fid: the identifier
+ * @func: the function to return to print as needed by the identifier
+ */
+typedef struct print_methods
+{
+	char *fid;
+	int (*func)(va_list list);
+} print_methods;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(va_list c);
-int print_string(va_list s);
-int printf_int(va_list i);
-int printf_bin(va_list b);
-int print_dec(va_list d);
-int print_unsigned(va_list u);
-int print_octal(va_list o);
-int print_hex(va_list x);
-int print_HEX(va_list X);
-int print_rev(va_list r);
-int print_rot13(va_list R);
-int print_address(va_list l, flags_t *f);
+int (*get_func(const char *s))(va_list);
 
-/**
- * struct c_format - structure format
- * @sc: specifier
- * @f: func
- */
-typedef struct c_format
-{
-char *sc;
-int (*f)(va_list);
-} code_f;
+int cb_print_string_r(va_list list);
+int cb_print_string(va_list list);
+int cb_print_char(va_list list);
+int cb_print_integers(va_list list);
+int cb_print_binary(va_list list);
+int cb_print_rot13(va_list list);
 
-#endif
+void _itoa(int value, char *str, int base);
+void _unsigneditoa(unsigned int value, char *str, int base);
+void _octalitoa(int value, char *str, int base);
+int cb_print_unsigned_integers(va_list list);
+int cb_print_octal_integers(va_list list);
+int cb_print_hex_integers(va_list list);
+int cb_print_hex_capital_integers(va_list list);
+int cb_print_pointers(va_list list);
+#endif /* HOLBERTON_H */
