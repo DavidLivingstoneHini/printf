@@ -90,7 +90,7 @@ _Bool isNonAlphaNumeric(char c);
 int print_address(va_list l, mods *f);
 
 /* print_percent */
-int print_percent(va_list l);
+void print_persent(void);
 int print_percent(va_list l, mods *f);
 
 /* assertions */
