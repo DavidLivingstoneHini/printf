@@ -10,31 +10,39 @@
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-int print_bigS(va_list l, flags_t *f)
+int print_bigS(va_list l, mods *f)
 {
-	int i, count = 0;
-	char *res;
-	char *s = va_arg(l, char *);
+	register short len = 0;
+	char *res, *s = va_arg(l, char *);
 
 	(void)f;
 	if (!s)
-		return (_puts("(null)"));
-
-	for (i = 0; s[i]; i++)
+		return (_puts(NULL_STRING));
+	for (; *s; s++)
 	{
-		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
+		if (isNonAlphaNumeric(*s))
 		{
-			_puts("\\x");
-			count += 2;
-			res = convert(s[i], 16, 0);
+			count += _puts("\\x");
+			res = convert(*s, 16, 0);
 			if (!res[1])
-				count += _putchar('0');
-			count += _puts(res);
+				len += _putchar('0');
+			len += _puts(res);
 		}
 		else
-			count += _putchar(s[i]);
+			len += _putchar(*s);
 	}
-	return (count);
+	return (len);
+}
+
+/**
+ * isNonAlphaNumeric - determines if char is a non-
+ * alphanumeric char on ASCII table
+ * @c: input char
+ * Return: true or false
+ */
+_Bool isNonAlphaNumeric(char c)
+{
+	return ((c > 0 && c < 32) || c >= 127);
 }
 
 /**
@@ -44,22 +52,19 @@ int print_bigS(va_list l, flags_t *f)
  * if a flag is passed to _printf
  * Return: length of the printed string
  */
-int print_rev(va_list l, flags_t *f)
+int print_rev(va_list l, mods *f)
 {
-	int i = 0, j;
+	register short len = 0, j;
 	char *s = va_arg(l, char *);
 
 	(void)f;
 	if (!s)
-		s = "(null)";
-
-	while (s[i])
-		i++;
-
-	for (j = i - 1; j >= 0; j--)
+		s = NULL_STRING;
+	while (s[len])
+		len++;
+	for (j = len - 1; j >= 0; j--)
 		_putchar(s[j]);
-
-	return (i);
+	return (len);
 }
 
 /**
@@ -69,9 +74,9 @@ int print_rev(va_list l, flags_t *f)
  * if a flag is passed to _printf
  * Return: length of the printed string
  */
-int print_rot13(va_list l, flags_t *f)
+int print_rot13(va_list l, mods *f)
 {
-	int i, j;
+	register short i, j;
 	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(l, char *);
@@ -84,13 +89,10 @@ int print_rot13(va_list l, flags_t *f)
 		else
 		{
 			for (i = 0; i <= 52; i++)
-			{
 				if (s[j] == rot13[i])
 					_putchar(ROT13[i]);
-			}
 		}
 	}
-
 	return (j);
 }
 
@@ -100,7 +102,7 @@ int print_rot13(va_list l, flags_t *f)
  * @f: pointer to the struct flags in which we turn the flags on
  * Return: number of char printed
  */
-int print_percent(va_list l, flags_t *f)
+int print_percent(va_list l, mods *f)
 {
 	(void)l;
 	(void)f;
