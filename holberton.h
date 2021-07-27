@@ -13,8 +13,8 @@ int printf_bin(va_list b);
 int print_dec(va_list d);
 int print_unsigned(va_list u);
 int print_octal(va_list o);
-int print_hex(va_list h);
-int print_HEX(va_list H);
+int print_hex(va_list x);
+int print_HEX(va_list X);
 int print_rev(va_list r);
 int print_rot13(va_list R);
 
@@ -27,6 +27,6 @@ typedef struct c_format
 {
 char *sc;
 int (*f)(va_list);
-} find_f;
+} code_f;
 
 #endif

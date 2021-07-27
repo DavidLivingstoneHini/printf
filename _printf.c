@@ -11,7 +11,7 @@
 int (*find_char_func(const char *format))(va_list)
 {
 unsigned int i = 0;
-find_f c[] = {
+code_f find_f[] = {
 {"c", print_char},
 {"s", print_string},
 {"d", print_dec},
@@ -25,10 +25,10 @@ find_f c[] = {
 {"R", print_rot13},
 {NULL, NULL}
 };
-while (c[i].sc)
+while (find_f[i].sc)
 {
-if (c[i].sc[0] == (*format))
-return (c[i].f);
+if (find_f[i].sc[0] == (*format))
+return (find_f[i].f);
 i++;
 }
 return (NULL);

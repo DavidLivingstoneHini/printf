@@ -12,27 +12,13 @@ int print_string(va_list str)
 {
 char *st;
 int i = 0;
-int len = 0;
 st = va_arg(str, char *);
 if (st == NULL)
-{
 st = "(null)";
- len = _strlen(st);
-while (i < len)
+while (st[i])
 {
 _putchar(st[i]);
 i++;
 }
-return (len);
-}
-else
-{
-len = _strlen(st);
-while (i < len)
-{
-_putchar(st[i]);
-i++;
-}
-return (len);
-}
+return (i);
 }
