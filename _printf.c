@@ -1,5 +1,9 @@
-#include "holberton.h"
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <unistd.h>
+#include "holberton.h"
 
 /**
  * _printf - produces output according to a format
