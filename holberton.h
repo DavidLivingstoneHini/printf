@@ -17,6 +17,7 @@ int print_hex(va_list x);
 int print_HEX(va_list X);
 int print_rev(va_list r);
 int print_rot13(va_list R);
+int print_address(va_list l, flags_t *f);
 
 /**
  * struct c_format - structure format
