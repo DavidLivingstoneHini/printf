@@ -101,7 +101,7 @@ int format_looper(const char *format, va_list arg_list, fs format_list[])
  * Return: number of characters printed
  */
 
-int parser(const char *format, va_list arg_list)
+/**int parser(const char *format, va_list arg_list)
 {
 	fs format_list[] = {
 		{"c", print_char},
@@ -119,3 +119,4 @@ int parser(const char *format, va_list arg_list)
 
 	return (format_looper(format, arg_list, format_list));
 }
+*/
