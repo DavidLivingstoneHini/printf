@@ -3,26 +3,10 @@
 #include "holberton.h"
 
 /**
-<<<<<<< HEAD
  * find_correct_func - finds the match func
  * @format: format
  * Return: null
  */
-=======
- * _printf - printsand formats strings
- *
- * @format: format string
- *
- * Return: number of characters printed
- */
-
-int _printf(const char *format, ...)
-{
-	int (*pfunc)(va_list, flags_t *);
-	const char *p;
-	va_list arguments;
-	flags_t flags = {0, 0, 0};
->>>>>>> 9a7f8eb50fa4d8f3b4359df0152103dcc1ac495e
 
 int (*find_correct_func(const char *format))(va_list)
 {
