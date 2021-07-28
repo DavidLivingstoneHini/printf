@@ -5,12 +5,12 @@
 #include <stdarg.h>
 
 /**
- * struct flags - struct containing flags to "turn on"
- * when a flag specifier is passed to _printf()
- * @plus: flag for the '+' character
- * @space: flag for the ' ' character
- * @hash: flag for the '#' character
+ * struct format_specifiers - struct holing each format specifier with
+ * its callback
+ * @specifier: the format specifier
+ * @printer: callback for printing the argument
  */
+
 typedef struct flags
 {
 	int plus;
