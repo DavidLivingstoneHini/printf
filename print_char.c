@@ -9,11 +9,11 @@
  * Return: 1
  */
 
-int print_char(va_list ch)
+int print_char(va_list c)
 {
-unsigned char c;
-c = va_arg(ch, int);
-_putchar(c);
+unsigned char my_char;
+my_char = va_arg(c, int);
+_putchar(my_char);
 return (1);
 }
 
@@ -22,7 +22,7 @@ return (1);
  * print_persent - prints %
  * Return 1
  */
-void print_persent(void)
+int print_percentage(void)
 {
 _putchar('%');
 return (1);
