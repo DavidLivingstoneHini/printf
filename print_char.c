@@ -5,7 +5,7 @@
 
 /**
  * print_char - writes the character c
- * @ch: the character to be printed
+ * @c: the character to be printed
  * Return: 1
  */
 
@@ -16,7 +16,6 @@ my_char = va_arg(c, int);
 _putchar(my_char);
 return (1);
 }
-
 
 /**
  * print_persent - prints %
