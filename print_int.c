@@ -24,7 +24,7 @@ num = n;
 len = 0;
 while (num != 0)
 {
-num /= 0;
+num /= 10;
 len++;
 }
 pow = 1;
