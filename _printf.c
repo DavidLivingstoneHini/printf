@@ -15,11 +15,11 @@ code_f find_f[] = {
 {"i", print_int},
 {"d", print_dec},
 {"r", print_rev},
-{"b", print_bin},
-{"u", print_unsigned},
-{"o", print_octal},
 {"x", print_hex},
 {"X", print_HEX},
+{"u", print_unsigned},
+{"o", print_octal},
+{"b", print_bin},
 {"R", print_rot13},
 {NULL, NULL}
 };
