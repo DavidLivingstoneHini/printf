@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
@@ -69,33 +68,4 @@ i++;
 }
 va_end(list);
 return (len);
-=======
-#include "holberton.h"
-#include <stdarg.h>
-#include <stdlib.h>
-
-/**
- * _printf - prints and formats strings
- *
- * @format: format string
- *
- * Return: number of charachters printed
- */
-
-int _printf(const char *format, ...)
-{
-	int print_count = 0;
-	va_list arg_list;
-
-	if (!format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-
-	va_start(arg_list, format);
-
-	print_count = parser(format, arg_list);
-
-	va_end(arg_list);
-
-	return (print_count);
->>>>>>> 3c3c1e283cb4f0d41de9b1e4011467cf09c95f5d
 }

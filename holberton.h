@@ -2,44 +2,30 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+int _putchar(char c);
+int _printf(const char *format, ...);
+int print_char(va_list c);
+int print_string(va_list s);
+int print_decimal(va_list d);
+int print_hex(va_list x);
+int print_HEX(va_list X);
+int print_octal(va_list o);
+int print_bin(va_list b);
+int print_unsigned(va_list u);
+int print_rot13(va_list R);
+int print_rev(va_list r);
+int print_int(va_list i);
 
 /**
- * struct format_specifiers - struct holing each format specifier with
- * its callback
- * @specifier: the format specifier
- * @printer: callback for printing the argument
+ * struct code_format - structure format
+ * @sc: specifier
+ * @f: function associated
  */
-typedef struct format_specifiers
-{
-	char *specifier;
-	int (*printer)(va_list arg_list);
-} fs;
 
-int print_R(va_list arg);
-int print_rev(va_list arg);
-int print_STR(va_list arg);
-int print_memory(va_list arg_list);
-int _putchar(char c);
-int parser(const char *format, va_list arg_list);
-int _printf(const char *format, ...);
-int print_char(va_list);
-int print_string(va_list);
-int print_decimal(va_list);
-int print_hex(va_list);
-int print_HEX(va_list);
-int _pow(unsigned int base, int power);
-int print_octal(va_list arg_list);
-char *inttostr(int number);
-int print_binary(va_list arg_list);
-int _strlen(char *string);
-int intlen(int number);
-int isoctal(char *string);
-int octaltodecimal(char *string);
-int fs_looper(const char *format, const char **formatt, va_list arg_list,
-	      fs format_list[]);
-int format_looper(const char *format, va_list arg_list, fs format_list[]);
-int print_unsigned(va_list arg_list);
+typedef struct code_format
+{
+  char *sc;
+  int (*f)(va_list);
+} code_f;
 
 #endif
