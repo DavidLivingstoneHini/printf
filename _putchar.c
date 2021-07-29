@@ -1,4 +1,16 @@
 #include <unistd.h>
+<<<<<<< HEAD
+
+/**
+ * _putchar - fun used to print
+ * @c: chars to be printed
+ * Return: 1
+ */
+
+int _putchar(char c)
+{
+return (write(1, &c, 1));
+=======
 #include "holberton.h"
 
 /**
@@ -11,4 +23,5 @@
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+>>>>>>> 3c3c1e283cb4f0d41de9b1e4011467cf09c95f5d
 }
