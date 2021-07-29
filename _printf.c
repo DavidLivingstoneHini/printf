@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * _printf - printsand formats strings
+ * _printf - prints and formats strings
  *
  * @format: format string
  *
