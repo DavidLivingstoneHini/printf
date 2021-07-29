@@ -5,7 +5,6 @@
 #include <stdarg.h>
 
 int _putchar(char c);
-static inline int (*find_correct_func(const char *format))(va_list)
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_string(va_list s);
