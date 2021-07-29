@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include "holberton.h"
 
 /**
- * printf_unsigned - prints unsigned values
- * @list: argument
- * Return: num of chars to be printed
+ * print_unsigned - prints unsigned 
+ * @u the unsigned
+ * Return: 1
  */
 
 int print_unsigned(va_list u)
 {
-unsigned int len, pow, j, digit, n, num;
-int count = 0;
-n = va_arg(u, unsigned int);
+int len, pow, j, digit, n, count, num;
+count = 0;
+n = va_arg(u, int);
 if (n != 0)
 {
 num = n;
@@ -24,9 +23,9 @@ num /= 10;
 len++;
 }
 pow = 1;
-for (j = 1; j < len - 1; j++)
+for (j = 1; j <= len - 1; j++)
 pow *= 10;
-for (j = 1; j < len; j++)
+for (j = 1; j <= len; j++)
 {
 digit = n / pow;
 _putchar(digit + '0');
