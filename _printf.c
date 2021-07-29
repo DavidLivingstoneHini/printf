@@ -57,10 +57,10 @@ i++;
 }
 if (format[i] == '\0')
 return (len);
-/**f = find_correct_func(&format[i + 1]);**/
-if ((find_correct_func(&format[i + 1]) != NULL))
+f == find_correct_func(&format[i + 1]);
+if (f != NULL)
 {
-len += (find_correct_func(&format[i + 1])(list));
+len += f(list);
 i += 2;
 continue;
 }
