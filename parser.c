@@ -1,8 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
 
-
-
 /**
  * fs_looper - parser helper because betty can't allow more than 40 lines
  * >:(
@@ -92,7 +90,6 @@ int format_looper(const char *format, va_list arg_list, fs format_list[])
 	}
 	return (print_count);
 }
-
 
 /**
  * parser - print the string and arguments in the right format
