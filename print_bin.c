@@ -9,7 +9,7 @@
  * Return: size
  */
 
-int print_hex(va_list x)
+int print_hex(va_list x, flags_t *f)
 {
 	unsigned int num = va_arg(l, unsigned int);
 	char *str = convert(num, 16, 1);
@@ -31,7 +31,7 @@ int print_hex(va_list x)
  * number into the correct base and returns it as a string
  * Return: the number of char printed
  */
-int print_HEX(va_list X)
+int print_HEX(va_list X, flags_t *f)
 {
 	unsigned int num = va_arg(l, unsigned int);
 	char *str = convert(num, 16, 0);
@@ -52,7 +52,7 @@ int print_HEX(va_list X)
  * number into the correct base and returns it as a string
  * Return: the number of char printed
  */
-int print_bin(va_list b)
+int print_bin(va_list b, flags_t *f)
 {
 	unsigned int num = va_arg(l, unsigned int);
 	char *str = convert(num, 2, 0);
@@ -70,7 +70,7 @@ int print_bin(va_list b)
  * number into the correct base and returns it as a string
  * Return: the number of char printed
  */
-int print_octal(va_list o)
+int print_octal(va_list o, flags_t *f)
 {
 	unsigned int num = va_arg(l, unsigned int);
 	char *str = convert(num, 8, 0);
