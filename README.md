@@ -2,6 +2,7 @@
 ## Description
 
 This team project is part of the first year curriculum of Holberton School and ALX_Africa.
+
 _printf replicates the C standard library printf() function.
 
 What you should learn from this project:
