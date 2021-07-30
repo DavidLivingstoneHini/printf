@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include "holberton.h"
+
+/**
+ * print_hexHEX - prints lowercase or uppercase hexa
+ * @n: num to be printed
+ * @c: case
+ * Return: size
+ */
+
+int print_hexHEX(unsigned int n, unsigned int c)
+{
+unsigned int len, pow, j, digit, num;
+int count = 0;
+char d;
+if (n != 0)
+{
+num = n;
+len = 0;
+if (c)
+d = 'A' - ':';
+else
+d = 'a' - ':';
+while (num != 0)
+{
+num /= 16;
+len++;
+}
+pow = 1;
+for (j = 1; j < len - 1; j++)
+pow *= 16;
+for (j = 1; j < len; j++)
+{
+digit = n / pow;
+if (digit < 10)
+_putchar(digit + '0');
+else
+_prtchar(digit + '0' + d);
+count++;
+n -= (digit * pow);
+pow /= 16;
+}
+}
+else
+{
+_putchar('0');
+return (1);
+}
+return (count);
+}
+
+/**
+ * print_hex - prints lowercase hexa
+ * @x: hexa to be printed
+ * Return: size
+ */
+int print_hex(va_list x)
+{
+return(print_hexHEX(va_arg(x, unsigned int), 0));
+}
+
+/**
+ * print_HEX - prints uppercase hexadecimal
+ * @X: hexa to be printed
+ * Return: size
+ */
+int print_HEX(va_list X)
+{
+return (print_hexHEX(va_arg(X, unsigned int), 1));
+}

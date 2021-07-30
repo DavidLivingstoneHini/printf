@@ -17,7 +17,6 @@ _putchar(my_ch);
 return (1);
 }
 
-
 /**
  * print_percent - prints persentage
  * Return: 1

@@ -6,7 +6,7 @@
 /**
  * print_string - prints string
  * @s: string to be printed
- * Return: 1
+ * Return: i
  */
 int print_string(va_list s)
 {

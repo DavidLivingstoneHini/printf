@@ -4,8 +4,9 @@
 #include "holberton.h"
 
 /**
- * find_correct_func - finding
+ * find_correct_func - finding the format for _printf
  * @format: format
+ * Return: NULL
  */
 
 int (*find_correct_func(const char *format))(va_list)
@@ -16,6 +17,13 @@ code_f find_f[] = {
 {"s", print_string},
 {"i", print_int},
 {"d", print_dec},
+{"r", print_rev},
+{"b", print_bin},
+{"u", print_unsigned},
+{"o", print_octal},
+{"x", print_hex},
+{"X", print_HEX},
+{"R", print_rot13},
 {NULL, NULL}
 };
 
