@@ -10,7 +10,7 @@
 int print_address(va_list p)
 {
 	char *str;
-	unsigned long int p = va_arg(l, unsigned long int);
+	unsigned long int p = va_arg(p, unsigned long int);
 
 	register int count = 0;
 
