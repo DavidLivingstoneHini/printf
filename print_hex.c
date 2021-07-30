@@ -7,7 +7,7 @@
  *
  * Return: number of digits printed
  */
-int print_hex(unsigned int n, unsigned int c)
+int print_hexHEX(unsigned int n, unsigned int c)
 {
 	unsigned int a[8];
 	unsigned int i, m, sum;
@@ -47,7 +47,7 @@ int print_hex(unsigned int n, unsigned int c)
  */
 int print_hex(va_list x)
 {
-	return (print_hex(va_arg(x, unsigned int), 0));
+	return (print_hexHEX(va_arg(x, unsigned int), 0));
 }
 
 /**
@@ -58,7 +58,7 @@ int print_hex(va_list x)
  */
 int print_HEX(va_list X)
 {
-	return (print_hex(va_arg(X, unsigned int), 1));
+	return (print_hexHEX(va_arg(X, unsigned int), 1));
 }
 
 /**
