@@ -19,6 +19,7 @@ int print_rot13(va_list R);
 int print_rev(va_list r);
 int print_int(va_list i);
 int print_S(va_list S);
+int print_p(va_list p);
 
 /**
  * struct code_format - structure format
