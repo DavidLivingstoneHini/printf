@@ -8,7 +8,7 @@
 int print_S(va_list S)
 {
 	int count = 0, i = 0;
-	char *str = va_arg(*list, char *);
+	char *str = va_arg(S, char *);
 	char c;
 
 	if (str == NULL || *str == '\0')
