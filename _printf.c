@@ -25,6 +25,7 @@ code_f find_f[] = {
 {"X", print_HEX},
 {"R", print_rot13},
 {"S", print_S},
+{'p', print_hex},
 {NULL, NULL}
 };
 
