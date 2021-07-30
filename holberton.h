@@ -6,7 +6,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_string(va_list s);
-int print_decimal(va_list d);
+int print_dec(va_list d);
 int print_hex(va_list x);
 int print_HEX(va_list X);
 int print_octal(va_list o);
