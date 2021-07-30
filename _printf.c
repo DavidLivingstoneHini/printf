@@ -25,7 +25,8 @@ code_f find_f[] = {
 {"X", print_HEX},
 {"R", print_rot13},
 {"S", print_S},
-{NULL, NULL}
+{"p", print_hex},
+{"\0", NULL}
 };
 
 while (find_f[i].sc)
