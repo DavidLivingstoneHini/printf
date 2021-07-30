@@ -1,34 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include "holberton.h"
+# include "holberton.h"
 
 /**
- * print_rot13 - prints rot13 encoding
- * @R: binary to be printed
- * Return: size
+ * rot13 - main function
+ * @y: The argument pointer.
+ *
+ * Description: This function prints the rot13'ed string.
+ *
+ * Return: The total number of characters.
  */
-
 int print_rot13(va_list R)
 {
-int i, j, count = 0;
-char *r;
-char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
-char ou[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
-r = va_arg(R, char *);
-if (r == NULL)
-r = "(null)";
-for (j = 0; r[j] != '\0'; j++)
-{
-for (i = 0; in[i] != '\0'; i++)
-{
-if (r[j] == in[i])
-{
-_putchar(ou[i]);
-count++;
-break;
-}
-}
-}
-return (count);
+	char alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int j, i = 0, count = 0, pl = 0;
+	char *s = va_arg(R, char*);
+
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+	while (s[i] != '\0')
+	{
+		pl = 0;
+		for (j = 0; alph[j] != '\0' && !pl; j++)
+		{
+			if (s[i] == alph[j])
+			{
+				_putchar(rot13[j]);
+				count++;
+				pl = 1;
+			}
+		}
+		if (!pl)
+		{
+			_putchar(s[i]);
+			count++;
+		}
+		i++;
+	}
+	return (count);
 }
