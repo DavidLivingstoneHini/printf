@@ -24,9 +24,9 @@ num /= 10;
 len++;
 }
 pow = 1;
-for (j = 1; j < len - 1; j++)
+for (j = 1; j <= len - 1; j++)
 pow *= 10;
-for (j = 1; j < len; j++)
+for (j = 1; j <= len; j++)
 {
 digit = n / pow;
 _putchar(digit + '0');
