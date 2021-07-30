@@ -11,6 +11,24 @@
 
 int print_rot13(va_list R)
 {
-va_arg(R, int);
-return (1);
+int i, j, count = 0;
+char *r;
+char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
+char ou[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
+r = va_arg(R, char *);
+if (r == NULL)
+r = "(null)";
+for (j = 0; r[j] != '\0'; j++)
+{
+for (i = 0; in[i] != '\0'; i++)
+{
+if (r[j] == in[i])
+{
+_putchar(ou[i]);
+count++;
+break;
+}
+}
+}
+return (count);
 }
