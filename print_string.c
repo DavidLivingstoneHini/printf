@@ -20,5 +20,5 @@ while (my_str[i])
 _putchar(my_str[i]);
 i++;
 }
-return (1);
+return (i);
 }
